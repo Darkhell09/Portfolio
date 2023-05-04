@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Abhishek Kumar Portfolio </title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/9161b17ea2.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="header">
@@ -41,11 +42,11 @@
             </p><br>
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Eduation</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Eduation</p>
                 </div>
-                <div class="tab-contents active-tab">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>HTML CSS and Js</span><br>Frontend Web Developer</li>
                         <li><span>Unity Engine</span><br>3D Game Developer/Terrain Designer</li>
@@ -53,13 +54,13 @@
                     </ul>
                 </div>
 
-                <div class="tab-contents">
+                <div class="tab-contents" id="experience">
                     <ul>
                         <li><span>Experience</span><br>No Experience</li>
                     </ul>
                 </div>
 
-                <div class="tab-contents">
+                <div class="tab-contents" id="education">
                     <ul>
                         <li><span>High School - 2017 - 2018</span><br>Air Force School Bareilly</li>
                         <li><span>Intermediate - 2019 - 2020</span><br>Air Force School Bareilly</li>
@@ -71,6 +72,68 @@
     </div>
 </div>
 
+<!---------Service-------->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1><br>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code fa-beat-fade"></i>
+                <h2>Web Developer</h2><br>
+                <p>Front End Web development using HTML CSS and Js. </p>
+                <a href ="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-brands fa-unity fa-beat-fade"></i>
+                <h2>Unity Engine</h2><br>
+                <p>Game Developer in Unity Engine </p>
+                <a href ="#">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-film fa-beat-fade"></i>
+                <h2>Macromedia Flash</h2><br>
+                <p>Flash Games and 2D animation </p>
+                <a href ="#">Learn More</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!------------------Portfolio--------------->
+<div id="portfolio"></div>
+<div class="conatiner">
+    <h1 class="sub-title">Portfolio</h1><br>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+</script>
 
 
     </body>
